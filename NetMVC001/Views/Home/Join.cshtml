@@ -1,0 +1,50 @@
+﻿@model NetMVC001.Models.CUser
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Join</title>
+</head>
+<body>
+    <div> 
+        <h2><a href="@Url.Action("Index", "Home")"><img src="../Images/back.png" /></a></h2>
+    </div>
+    @using (Html.BeginForm("Join", "Home"))
+    {
+    <table>
+        <tr>
+            <th>가입항목</th>
+            <th>내용</th>
+        </tr>
+        <tr>
+            <td>아이디</td>
+            <td>@Html.TextBoxFor(x => x.theID, new { style = "width:150px;" })</td>
+        </tr>
+        <tr>
+            <td>암호</td>
+            <td>@Html.TextBoxFor(x => x.thePW
+           , new { style = "width:150px;", @type="password"})</td>
+        </tr>
+        <tr>
+            <td>이름</td>
+            <td>@Html.TextBoxFor(x => x.theName, new { style = "width:150px;" })</td>
+        </tr>
+        <tr>
+            <td>이메일</td>
+            <td>@Html.TextBoxFor(x => x.theEmail, new { style = "width:150px;" })</td>
+        </tr>
+        <tr>
+            <td>이메일 수신동의</td>
+            <td>@Html.CheckBoxFor(x => x.bSubscription, new { style = "width:150px;" })</td>
+        </tr>
+    </table>
+    <input type="submit" name="name" value="가입하기" />
+    }
+</body>
+</html>
